@@ -1,5 +1,7 @@
 package clustering;
 
+import io.testio.Printable;
+
 import java.util.ArrayList;
 
 /**
@@ -11,10 +13,12 @@ public class Cluster {
 	private int size;
 	private EdgeList edgeContainer ;
 	private NodeList nodeContainer ;
+	private boolean printUtilityFlag ;
 	
 	int clusterId;
 	
 	public Cluster(int id){
+		printUtilityFlag = false ;
 		size = 0 ;
 		edgeContainer = new EdgeList() ;
 		nodeContainer = new NodeList() ;
@@ -57,5 +61,35 @@ public class Cluster {
 	public ArrayList<Node> allNodes() {
 		return nodeContainer.getAll() ;
 	}
+	
+	public void setPrintUtilityFlag(boolean b){
+		printUtilityFlag = b; 
+	}
+	
+	public boolean getPrintUtilityFlag(){
+		return printUtilityFlag;
+	}
+	
+	public ClusterGraph getGraph(){
+		return new ClusterGraph(edgeContainer, nodeContainer);
+	}
+	
+	public int getClusterId(){
+		return clusterId;
+	}
 
+	public GenericClusterRepresentation<Integer> getRepresentation() {
+		GenericClusterRepresentation<Integer> ret = new GenericClusterRepresentation<>(clusterId) ;
+//		System.out.println("cluster: " + clusterId);
+		for(Node n : allNodes()){
+//			System.out.println(n.getId());
+			ret.addNode(n.getId());
+		}
+		for(Edge e : allEdges()){
+//			System.out.println(e.getA() + " " + e.getB());
+			ret.addEdge(e.getA(), e.getB());
+		}
+//		System.out.println();
+		return ret; 
+	}
 }

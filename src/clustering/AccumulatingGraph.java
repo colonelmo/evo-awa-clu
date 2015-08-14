@@ -10,6 +10,11 @@ import java.util.ArrayList;
 public class AccumulatingGraph {
 	private ArrayList<Pair> toInsert ;
 //	private ArrayList<Pair> toDelete ; How to define delete ? WHICH connection should be deleted ?
+	
+	public AccumulatingGraph(){
+		toInsert = new ArrayList<>();
+	}
+	
 	public void addEdge(int a, int b){
 		toInsert.add(new Pair(a , b));
 	}

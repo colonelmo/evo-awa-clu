@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
  * @author colonelmo
  * edge list of a cluster, handling insertions/deletions/etc.
  */
-public class EdgeList {
+public class EdgeList extends AbstractContainer {
 	
 	PriorityQueue<Edge> list;
 	
@@ -39,4 +39,5 @@ public class EdgeList {
 		}
 		return ret; 
 	}
+	
 }

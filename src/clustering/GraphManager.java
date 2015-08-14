@@ -1,5 +1,7 @@
 package clustering;
 
+import io.testio.Printable;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -8,7 +10,7 @@ import java.util.HashMap;
  * @author colonelmo
  * Handling low level queries
  */
-public class GraphManager {
+public class GraphManager{
 	private Graph gr ;
 	private HashMap<Edge , Cluster> edgeClusterMap ;
 //	private HashMap<Node , Cluster> nodeClusterMap ;
@@ -146,6 +148,21 @@ public class GraphManager {
 		for(Edge ed : toAdd){
 			insert(ed);
 		}
+	}
+	
+	public GenericGraphRepresentation<Integer> getRepresentation(){
+		GenericGraphRepresentation<Integer> ret = new GenericGraphRepresentation<>();
+		for(Node n : idNodeMap.values()){
+			n.getAssociatedCluster().setPrintUtilityFlag(false);
+		}
+		for(Node n : idNodeMap.values()){
+//			System.out.println(n.getId() + " " + n.getAssociatedCluster().getClusterId());
+			if(!n.getAssociatedCluster().getPrintUtilityFlag()){
+				ret.addCluster(n.getAssociatedCluster().getRepresentation());
+				n.getAssociatedCluster().setPrintUtilityFlag(true);
+			}
+		}
+		return ret; 
 	}
 	
 }
