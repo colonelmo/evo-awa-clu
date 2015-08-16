@@ -7,7 +7,8 @@ import java.util.Scanner;
 public class TestInput {
 	private Scanner in;
 	public TestInput(String inFile) throws FileNotFoundException {
-		in = new Scanner(new File(inFile));
+//		in = new Scanner(System.in);
+				in = new Scanner(new File(inFile));
 	}
 	
 	public boolean hasNextInt(){

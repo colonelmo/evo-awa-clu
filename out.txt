@@ -1,0 +1,135 @@
+time : 1
+num of clusters : 1
+Cluster id :B
+Nodes : B C
+Edges : B C
+
+
+
+time : 2
+num of clusters : 1
+Cluster id :B
+Nodes : B C A
+Edges : B C, C A
+
+
+
+time : 3
+num of clusters : 1
+Cluster id :B
+Nodes : B C A D
+Edges : B C, C A, D C
+
+
+
+time : 4
+num of clusters : 2
+Cluster id :B
+Nodes : B C A D
+Edges : B C, C A, D C
+Cluster id :E
+Nodes : E F
+Edges : E F
+
+
+
+time : 5
+num of clusters : 2
+Cluster id :B
+Nodes : B C A D
+Edges : B C, C A, D C
+Cluster id :E
+Nodes : E F G
+Edges : E F, E G
+
+
+
+time : 6
+num of clusters : 2
+Cluster id :B
+Nodes : B C A D
+Edges : C A, D C, B D
+Cluster id :E
+Nodes : E F G
+Edges : E F, E G
+
+
+
+time : 7
+num of clusters : 2
+Cluster id :B
+Nodes : B C A D
+Edges : D C, B D, B A
+Cluster id :E
+Nodes : E F G
+Edges : E F, E G
+
+
+
+time : 8
+num of clusters : 3
+Cluster id :B
+Nodes : B A D
+Edges : B D, B A, D A
+Cluster id :C
+Nodes : C
+Edges :
+Cluster id :E
+Nodes : E F G
+Edges : E F, E G
+
+
+
+time : 9
+num of clusters : 3
+Cluster id :B
+Nodes : B A D
+Edges : B D, B A, D A
+Cluster id :C
+Nodes : C
+Edges :
+Cluster id :F
+Nodes : E F G
+Edges : E G, F G
+
+
+
+time : 10
+num of clusters : 3
+Cluster id :B
+Nodes : B A D
+Edges : B D, B A, D A
+Cluster id :C
+Nodes : C E
+Edges : C E
+Cluster id :F
+Nodes : F G
+Edges : F G
+
+
+
+time : 11
+num of clusters : 2
+Cluster id :D
+Nodes : B A D
+Edges : B A, D A
+Cluster id :C
+Nodes : C E F G
+Edges : F G, C E, C G
+
+
+
+time : 12
+num of clusters : 3
+Cluster id :B
+Nodes : B
+Edges :
+Cluster id :C
+Nodes : C E F G
+Edges : F G, C E, C G, C F
+Cluster id :D
+Nodes : A D
+Edges : D A
+
+
+

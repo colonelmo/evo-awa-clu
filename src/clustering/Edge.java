@@ -50,4 +50,9 @@ public class Edge {
 	public int hashCode() {
 		return edgeId ;
 	}
+	
+	public String toString(){
+		return from + " " + to + " t : " + arrivalTimestamp + " id : " + edgeId;
+	}
+	
 }

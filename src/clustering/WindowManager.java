@@ -19,7 +19,7 @@ public class WindowManager {
 	
 	public WindowManager(Graph gr){
 		this.gr = gr ;
-		currentTimestamp = 0 ;
+		currentTimestamp = 1 ;
 		window = new CountBasedSlidingWindow(this , help.Constants.Parameters.WINDOW_SIZE);
 	}
 	
@@ -28,7 +28,7 @@ public class WindowManager {
 	}
 	
 	private Edge createEdge(Pair p){
-		return new Edge(p.a , p.b , currentTimestamp, nextEdgeId) ;
+		return new Edge(p.a , p.b , currentTimestamp, nextEdgeId ++) ;
 	}
 	
 	private void advanceTimestamp(){
@@ -36,6 +36,7 @@ public class WindowManager {
 	}
 	
 	public void update(AccumulatingGraph g){
+		System.out.println("current time : " + currentTimestamp);
 		for(Pair e : g.getInsertions()){
 			window.handleNewEdge(createEdge(e));
 		}

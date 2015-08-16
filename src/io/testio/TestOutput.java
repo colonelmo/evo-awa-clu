@@ -16,7 +16,13 @@ public class TestOutput {
 	
 	public void print(Printable p){
 		out.println(p.print());
-		System.out.println(p.print());
+//		System.out.println(p.print());
 	}
 	
+	public void close(){
+		out.close();
+	}
+	public void print(String str){
+		out.print(str);
+	}
 }

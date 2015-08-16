@@ -37,6 +37,10 @@ public class Cluster {
 		return this ;
 	}
 	
+	public boolean hasEdge(Edge e){
+		return edgeContainer.hasEdge(e);
+	}
+	
 	public int getClusterNodeSize(){
 		return nodeContainer.size() ;
 	}
@@ -70,9 +74,9 @@ public class Cluster {
 		return printUtilityFlag;
 	}
 	
-	public ClusterGraph getGraph(){
-		return new ClusterGraph(edgeContainer, nodeContainer);
-	}
+//	public ClusterGraph getGraph(){
+//		return new ClusterGraph(edgeContainer, nodeContainer);
+//	}
 	
 	public int getClusterId(){
 		return clusterId;
@@ -91,5 +95,9 @@ public class Cluster {
 		}
 //		System.out.println();
 		return ret; 
+	}
+
+	public int getClusterEdgeSize() {
+		return edgeContainer.num() ;
 	}
 }

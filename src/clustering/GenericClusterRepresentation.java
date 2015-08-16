@@ -53,6 +53,7 @@ public class GenericClusterRepresentation<T> implements Printable{
 	@Override
 	public String print() {
 		StringBuilder sb = new StringBuilder() ;
+		sb.append("Cluster id :" + clusterId +  "\n");
 		sb.append("Nodes :") ;
 		for(T element : getNodes()){
 			sb.append(" ");

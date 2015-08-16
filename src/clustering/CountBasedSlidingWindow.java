@@ -21,6 +21,7 @@ public class CountBasedSlidingWindow {
 	public void handleNewEdge(Edge e){
 		addToWindow(e);
 		checkSlidingWindowCondition();
+//		System.out.println(edgeQ.size());
 	}
 
 	private void checkSlidingWindowCondition() {
@@ -30,6 +31,7 @@ public class CountBasedSlidingWindow {
 	}
 
 	private void popFromWindow() {
+//		System.out.println(edgeQ.peek()) ;
 		getGraphManager().deleteEdge(edgeQ.remove());		
 	}
 

@@ -36,16 +36,22 @@ public class Graph <T>{
 		if(!nodeMap.containsKey(from)){
 			nodeMap.put(from, nodeNum);
 			inverseMap.put(nodeNum ++ , from);
+//			nodeMap.put(from, (Integer)from);
+//			inverseMap.put((Integer)from , from);
 		}
 		if(!nodeMap.containsKey(to)){
 			nodeMap.put(to , nodeNum);
 			inverseMap.put(nodeNum++ , to);
+//			nodeMap.put(to, (Integer)to);
+//			inverseMap.put((Integer)to , to);
 		}
 		updates.addEdge(nodeMap.get(from), nodeMap.get(to));
+	
 	}
 	
 	public void evaluate(){
 		wm.update(updates);
+		gm.entries() ;
 		clear() ;
 	}
 	public void clear(){

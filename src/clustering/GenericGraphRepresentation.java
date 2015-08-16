@@ -30,6 +30,7 @@ public class GenericGraphRepresentation <T> implements Printable{
 	@Override
 	public String print() {
 		StringBuilder sb = new StringBuilder() ;
+		sb.append("num of clusters : " + getClusters().size() + "\n");
 		for(GenericClusterRepresentation<T> element: getClusters()){
 			sb.append(element.print());
 			sb.append("\n");
