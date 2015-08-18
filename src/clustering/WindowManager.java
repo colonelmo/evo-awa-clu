@@ -36,9 +36,13 @@ public class WindowManager {
 	}
 	
 	public void update(AccumulatingGraph g){
-		System.out.println("current time : " + currentTimestamp);
+//		System.out.println("current time : " + currentTimestamp);
+		int tm = 0 ;
 		for(Pair e : g.getInsertions()){
+			if(tm != 0 && tm % 1000 == 0)
+				System.out.println(tm);
 			window.handleNewEdge(createEdge(e));
+			tm ++ ;
 		}
 		// No deletion support yet !
 		advanceTimestamp();

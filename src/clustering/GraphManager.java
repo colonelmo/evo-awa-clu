@@ -55,7 +55,7 @@ public class GraphManager{
 	}
 	
 	private void insert(Edge e){
-		System.out.println("insing : " + e);
+//		System.out.println("insing : " + e);
 		int nodeIdA = e.getA() ;
 		int nodeIdB = e.getB() ;
 		Node a = null , b = null ;
@@ -153,33 +153,33 @@ public class GraphManager{
 	}
 	
 	private void delete(Edge e){
-		System.out.println("deling : " + e);
-		System.out.println("#################");
-		entries() ;
-		System.out.println("*****************");
+//		System.out.println("deling : " + e);
+//		System.out.println("#################");
+//		entries() ;
+//		System.out.println("*****************");
 		
 //		if(!edgeClusterMap.containsKey(e))
 //			return ;
 		Cluster cl = findClusterOfEdge(e);
-		System.out.println("cl id of del : " + cl.getClusterId());
+//		System.out.println("cl id of del : " + cl.getClusterId());
 //		System.out.println(cl.getClusterId());
 //		System.out.println(cl.getClusterEdgeSize());
 		ArrayList<Edge> toAdd = new ArrayList<>() ;
-		System.out.println("to add : ");
+//		System.out.println("to add : ");
 		for(Edge ed : cl.allEdges()){
 			if(ed != e){
 				toAdd.add(ed);
-				System.out.println(ed);
+//				System.out.println(ed);
 			}
 		}
 		
 //		edgeClusterMap.remove(e);
 		ArrayList < Node> tempNodes = cl.allNodes() ;
 		cl.reset();
-		System.out.println("reseting : ");
+//		System.out.println("reseting : ");
 		for(Node n: tempNodes){
 			n.reset() ;
-			System.out.println(n);
+//			System.out.println(n);
 		}
 		for(Edge ed : toAdd){
 			insert(ed);
@@ -202,22 +202,22 @@ public class GraphManager{
 	}
 	
 	public void entries(){
-		for(Integer i : idNodeMap.keySet()){
-			Node n = idNodeMap.get(i);
-			Cluster cl = n.getAssociatedCluster() ;
-			System.out.println(i + " : " + n.getId());
-			System.out.println("cluster : " + cl.getClusterId()+ " " + cl.getClusterEdgeSize() + " " + cl.getClusterNodeSize() );
-			System.out.println("node : ");
-			for(Node nd : cl.allNodes()){
-				System.out.println(nd.getId());
-			}
-			System.out.println("edges :");
-			for(Edge e : cl.allEdges()){
-				System.out.println(e.getA() +  " " + e.getB());
-			}
-			
-			System.out.println("\n");
-		}
+//		for(Integer i : idNodeMap.keySet()){
+//			Node n = idNodeMap.get(i);
+//			Cluster cl = n.getAssociatedCluster() ;
+//			System.out.println(i + " : " + n.getId());
+//			System.out.println("cluster : " + cl.getClusterId()+ " " + cl.getClusterEdgeSize() + " " + cl.getClusterNodeSize() );
+//			System.out.println("node : ");
+//			for(Node nd : cl.allNodes()){
+//				System.out.println(nd.getId());
+//			}
+//			System.out.println("edges :");
+//			for(Edge e : cl.allEdges()){
+//				System.out.println(e.getA() +  " " + e.getB());
+//			}
+//			
+//			System.out.println("\n");
+//		}
 		
 //		for(Edge e : edgeClusterMap.keySet()){
 //			System.out.println(e + " maps to : " + edgeClusterMap.get(e).getClusterId());

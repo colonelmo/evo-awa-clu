@@ -16,29 +16,34 @@ public class Main {
 //		PrintWriter pw = new PrintWriter("out.txt" , "UTF-8");
 //		pw.print("Hello !");
 		
-		String inFile = "input.txt";
+		String inFile = "face.in";
 		String outFile = "out.txt";
 		TestInput in = new TestInput(inFile);
 		TestOutput out = new TestOutput(outFile);
 //		System.out.println("done");
 		
-		Graph<String> g = new Graph<>();
+		Graph<Integer> g = new Graph<>();
 		int tm = 1 ;
 		while(in.hasNextInt()){
 			int numEdges = in.nextInt(); 
+			int num = 0 ;
 			for(int i = 0 ;i < numEdges ; i++){
-				String a = in.next(), b = in.next() ;
+				int a = in.nextInt(), b = in.nextInt() ;
 				g.addEdge(a ,b) ;
-				System.out.println(a + " " + b);
+//				System.out.println(a + " " + b);
+				num ++ ;
 			}
+//			System.out.println(num);
+			if(tm%1000 == 0)
+				System.out.println(tm);
 			g.evaluate();
-			
 //			System.out.println("evaling");
-			out.print("time : " + tm + "\n") ;
-			out.print(g.getRepresentation());
-			out.print("\n");
+//			out.print("time : " + tm + "\n") ;
+//			out.print(g.getRepresentation());
+//			out.print("\n");
 			tm ++ ;
 		}
+		out.print(g.getRepresentation());
 		out.close() ;
 	}
 }
