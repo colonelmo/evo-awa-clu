@@ -11,6 +11,7 @@ import java.util.HashMap;
  * Handling low level queries
  */
 public class GraphManager{
+	private int numDel = 0;
 	private Graph gr ;
 //	private HashMap<Edge , Cluster> edgeClusterMap ;
 //	private HashMap<Node , Cluster> nodeClusterMap ;
@@ -153,6 +154,7 @@ public class GraphManager{
 	}
 	
 	private void delete(Edge e){
+		numDel ++;
 //		System.out.println("deling : " + e);
 //		System.out.println("#################");
 //		entries() ;
@@ -188,6 +190,7 @@ public class GraphManager{
 	
 	public GenericGraphRepresentation<Integer> getRepresentation(){
 		GenericGraphRepresentation<Integer> ret = new GenericGraphRepresentation<>();
+		ret.numDel = numDel;
 		for(Node n : idNodeMap.values()){
 			n.getAssociatedCluster().setPrintUtilityFlag(false);
 		}
