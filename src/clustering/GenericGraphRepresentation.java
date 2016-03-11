@@ -7,9 +7,10 @@ import java.util.HashMap;
 
 public class GenericGraphRepresentation <T> implements Printable{
 	private ArrayList<GenericClusterRepresentation<T> > clusterList ;
-	public int numDel ;
-	public GenericGraphRepresentation(){
+	private int numDel ;
+	public GenericGraphRepresentation(int numDel){
 		clusterList = new ArrayList<>();
+		this.numDel = numDel;
 	}
 	
 	public void addCluster(GenericClusterRepresentation<T> cl){
@@ -30,7 +31,7 @@ public class GenericGraphRepresentation <T> implements Printable{
 	@Override
 	public String print() {
 		StringBuilder sb = new StringBuilder() ;
-		sb.append("num of deleted edges : " + numDel+ "\n");
+		sb.append("num of deleted edges : " + numDel+ "\n\n");
 		sb.append("num of clusters : " + getClusters().size() + "\n");
 		for(GenericClusterRepresentation<T> element: getClusters()){
 			sb.append(element.print());

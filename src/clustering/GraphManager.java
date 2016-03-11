@@ -189,8 +189,7 @@ public class GraphManager{
 	}
 	
 	public GenericGraphRepresentation<Integer> getRepresentation(){
-		GenericGraphRepresentation<Integer> ret = new GenericGraphRepresentation<>();
-		ret.numDel = numDel;
+		GenericGraphRepresentation<Integer> ret = new GenericGraphRepresentation<>(getNumDel());
 		for(Node n : idNodeMap.values()){
 			n.getAssociatedCluster().setPrintUtilityFlag(false);
 		}
@@ -202,6 +201,10 @@ public class GraphManager{
 			}
 		}
 		return ret; 
+	}
+	
+	public int getNumDel(){
+		return numDel;
 	}
 	
 	public void entries(){

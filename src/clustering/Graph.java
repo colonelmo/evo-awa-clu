@@ -72,7 +72,7 @@ public class Graph <T>{
 //	}
 	
 	public GenericGraphRepresentation<T> getRepresentation(){
-		GenericGraphRepresentation<T> ret =  new GenericGraphRepresentation<T>();
+		GenericGraphRepresentation<T> ret =  new GenericGraphRepresentation<T>(gm.getNumDel());
 		ret.transform(getGraphManager().getRepresentation(), inverseMap );//transform(getGraphManager().getRepresentation(), inverseMap);
 		return ret ;
 	}
